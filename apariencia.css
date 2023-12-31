@@ -1,0 +1,106 @@
+body {
+  background-image:url('Img/Portada.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta correcta de tu imagen de fondo */
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif;
+}
+h1,h2{
+  color: #fffefe;
+  text-align: center;
+}
+ h3{
+  width: 118px;
+  height: 22px;
+  border-radius: 5px;
+  background-color: #939396;
+  color: #fffefe;
+}
+p{
+  color: #fffefe;
+  text-align:justify;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+img{
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 80%;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  transition: all 0.2s ease-in-out;
+}
+nav {
+  background-color: #939396;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+nav a:hover {
+  transform: translateY(-5px); 
+}
+.MiPerfil {
+  width: 600px;
+  height: auto;
+  margin: 20px auto; 
+  margin-right: 20px;
+  border-radius: 5px;
+  background-color: #939396;
+  max-width: 100%; 
+  opacity: 0.9; 
+}
+
+.titulo2{
+  margin-left: 200px;
+  align-content: center;
+}
+#Habilidades{
+  width: 600px;
+  height: auto;
+  margin-left: 550px;
+  background-color: #939396;
+  max-width: 100%; 
+  opacity: 0.9; 
+}
+button{
+  width: 150px;
+  height: 50px;
+  background-color: #939396;
+  font-size: 20px; 
+  color: #fff;
+}
+button:hover {
+  background-color: #0808a6;
+  color: #fff;
+}
+.link {
+  text-decoration: none; 
+  color: #fff; 
+}
+.portafolio{
+  text-align: center;
+}
+footer {
+  background-color: #939396;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-decoration: none;
+}
+.botonera {
+  text-align: center;
+  margin-top: 50px; 
+}
+.botonera a {
+  margin: 0 10px;
+}
