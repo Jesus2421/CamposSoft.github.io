@@ -1,0 +1,38 @@
+# Carpeta PHP con credenciales
+php/
+
+# Archivos de configuración con credenciales
+*.env
+.env.local
+.env.production
+config.php
+credentials.json
+secrets.json
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# Carpetas de dependencias (si las usas en el futuro)
+node_modules/
+vendor/
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de prueba
+test-formspree.html
+CONFIGURAR-EMAILJS.md
+INSTRUCCIONES-FORMSPREE.md

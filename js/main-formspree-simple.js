@@ -72,10 +72,8 @@ $(document).ready(function() {
         }
     });
 
-    // Form validation
+    // Form validation - VERSIÓN SIMPLE (deja que Formspree maneje el envío)
     $('#contactForm').submit(function(e) {
-        e.preventDefault();
-        
         // Clear previous validation state
         $(this).find('.is-invalid').removeClass('is-invalid');
         $(this).find('.invalid-feedback').empty();
@@ -117,48 +115,17 @@ $(document).ready(function() {
             isValid = false;
         }
         
-        // If valid, send data to Formspree via AJAX
-        if (isValid) {
-            const form = $(this);
-            const submitButton = $('#submitButton');
-            const originalText = submitButton.text();
-            
-            submitButton.text('Enviando...').prop('disabled', true);
-            
-            $.ajax({
-                url: form.attr('action'),
-                method: form.attr('method'),
-                data: form.serialize(),
-                dataType: 'json',
-                success: function(response) {
-                    // Éxito - el usuario NO ve nada de Formspree
-                    form.trigger('reset');
-                    $('#form-message-success').removeClass('d-none alert-danger').addClass('alert-success').text('¡Mensaje enviado con éxito! Te responderé pronto.');
-                    
-                    setTimeout(function() {
-                        $('#form-message-success').addClass('d-none');
-                    }, 5000);
-                },
-                error: function(xhr, status, error) {
-                    // Formspree devuelve status 200 pero sin JSON cuando funciona
-                    // Esto es normal y significa que SÍ se envió
-                    if (xhr.status === 200 || xhr.status === 0) {
-                        form.trigger('reset');
-                        $('#form-message-success').removeClass('d-none alert-danger').addClass('alert-success').text('¡Mensaje enviado con éxito! Te responderé pronto.');
-                        
-                        setTimeout(function() {
-                            $('#form-message-success').addClass('d-none');
-                        }, 5000);
-                    } else {
-                        // Error real
-                        $('#form-message-success').removeClass('d-none alert-success').addClass('alert-danger').text('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.');
-                    }
-                },
-                complete: function() {
-                    submitButton.text(originalText).prop('disabled', false);
-                }
-            });
+        // Si no es válido, prevenir el envío
+        if (!isValid) {
+            e.preventDefault();
+            return false;
         }
+        
+        // Si es válido, cambiar el texto del botón y dejar que el formulario se envíe normalmente
+        $('#submitButton').text('Enviando...').prop('disabled', true);
+        
+        // El formulario se enviará a Formspree automáticamente
+        // Formspree redirigirá a su página de confirmación
     });
     
     // Email validation helper function
@@ -190,4 +157,6 @@ $(document).ready(function() {
         $('body').addClass('dark-mode');
         $('#theme-toggle').find('i').removeClass('fa-moon').addClass('fa-sun');
     }
-}); 
+    
+    // Add small icon to external links
+});
