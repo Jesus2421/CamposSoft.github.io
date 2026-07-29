@@ -167,27 +167,4 @@ $(document).ready(function() {
         return regex.test(email);
     }
 
-    // Dark/Light theme toggle
-    $('#theme-toggle').click(function(e) {
-        e.preventDefault();
-        $('body').toggleClass('dark-mode');
-        
-        const icon = $(this).find('i');
-        if (icon.hasClass('fa-moon')) {
-            icon.removeClass('fa-moon').addClass('fa-sun');
-        } else {
-            icon.removeClass('fa-sun').addClass('fa-moon');
-        }
-        
-        // Store preference in localStorage
-        const isDarkMode = $('body').hasClass('dark-mode');
-        localStorage.setItem('darkMode', isDarkMode);
-    });
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('darkMode');
-    if (savedTheme === 'true') {
-        $('body').addClass('dark-mode');
-        $('#theme-toggle').find('i').removeClass('fa-moon').addClass('fa-sun');
-    }
-}); 
+});
