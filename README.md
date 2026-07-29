@@ -50,7 +50,7 @@ portfolio-html-jquery/
 - **Especialidades**: Áreas principales de experiencia profesional
 - **Proyectos**: Portafolio de trabajos realizados con filtrado por categorías
 - **Contacto**: Formulario para comunicarse e información de contacto
-
+git
 ## Personalización
 
 - Cambia los colores principales modificando las variables CSS en `:root`
